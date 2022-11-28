@@ -20,7 +20,7 @@ def main():
 
 
 def sandboxAvailability(API_Server):
-    response = requests.get(API_Server)
+    response = requests.get(API_Server, verify=False)
     if response.status_code != 200:
         #send notification to bot
         print("Error", response.status_code)

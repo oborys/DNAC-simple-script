@@ -51,7 +51,7 @@ def checkSimpleRequest(API_Server):
     urlSimpleDNAerror = API_Server + "api/v1/network-devic/"
     HTTP_Request_header = {'x-auth-token': tokenDNA}
     try:
-        response = requests.get(urlSimpleDNA, headers=HTTP_Request_header)
+        response = requests.get(urlSimpleDNA, headers=HTTP_Request_header, verify=False)
         print ("\n API Operation: GET https://sandboxdnac.cisco.com/api/v1/network-device/ response JSON:\n", response.json())
         print ("\n Extract related information from JSON:\n")
         for item in response.json()['response']:
